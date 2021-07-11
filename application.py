@@ -8,7 +8,8 @@ def hello_world():
     my_bucket = s3.Bucket('jobmaxresults')
     #obj_list = s3.list_objects_v2(Bucket=my_bucket)
     #objlist = my_bucket.objects.all()
-    (bucket, keylist) = map(lambda x: (x.bucket_name, x.key), my_bucket.objects.all())
+    objlist = map(lambda x: (x.bucket_name, x.key), my_bucket.objects.all())
+    keylist = [j for i, j in objlist]
     #bucket, keylist = objlist
     #keylist = my_bucket.objects.all().keys()
     #urllist = ['https://jobmaxresults.s3.amazonaws.com/' + key['Key'] for key in urllist]
