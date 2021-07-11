@@ -2,7 +2,6 @@ import string
 
 import boto3
 from flask import Flask, render_template
-import string
 application = Flask(__name__)
 
 @application.route('/')
@@ -12,7 +11,7 @@ def hello_world():
     #obj_list = s3.list_objects_v2(Bucket=my_bucket)
     #objlist = my_bucket.objects.all()
     objlist = map(lambda x: (x.bucket_name, x.key), my_bucket.objects.all())
-    keylist = ['https://jobmaxresults.s3.amazonaws.com/' + string.replace(j,' ', '+') for i, j in objlist]
+    keylist = ['https://jobmaxresults.s3.amazonaws.com/' + j.replace(' ', '+') for i, j in objlist]
     #bucket, keylist = objlist
     #keylist = my_bucket.objects.all().keys()
     #urllist = ['https://jobmaxresults.s3.amazonaws.com/' + key['Key'] for key in urllist]
