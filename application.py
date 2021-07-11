@@ -14,10 +14,3 @@ def hello_world():
     #           'https://jobmaxresults.s3.amazonaws.com/wordcloud_AWS+developer_2020-11-21.jpg']
     return render_template('index.html', urllist=urllist)
 
-def get_s3_keys(bucket):
-    """Get a list of keys in an S3 bucket."""
-    keys = []
-    resp = s3.list_objects_v2(Bucket=bucket)
-    for obj in resp['Contents']:
-        keys.append(obj['Key'])
-    return keys
