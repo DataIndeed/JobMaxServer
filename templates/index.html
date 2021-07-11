@@ -6,7 +6,8 @@
 </head>
 <body>
    <h1>Welcome to JobMax</h1>
-   <img src="https://jobmaxresults.s3.amazonaws.com/wordcloud_AWS+developer_2020-11-21.jpg" width="200px" height="200px">
-
+   {% for my_item in my_collection %}
+   <img src=my_item width="200px" height="200px">
+    {% endfor %}
 </body>
 </html>
