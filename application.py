@@ -21,4 +21,4 @@ def hello_world():
     #           'https://jobmaxresults.s3.amazonaws.com/wordcloud_AWS+developer_2020-11-21.jpg']
     return render_template('index.html', urllist=urllist)
 
-application.run()
+#application.run()
