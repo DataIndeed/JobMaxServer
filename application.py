@@ -31,6 +31,7 @@ def analyze():
     queue = sqs.get_queue_by_name(QueueName='JOBMAXSEARCH')
     response = queue.send_message(MessageBody=job_title)
 
+
     return utils.redirect(url_for('index'))
 
 application.run()
